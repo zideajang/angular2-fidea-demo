@@ -4,12 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
+
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RecommendComponent } from './pagers/recommend/recommend.component';
 import { PopularComponent } from './pagers/popular/popular.component';
 import { MediaComponent } from './components/media/media.component';
 import { TutorialDetailComponent } from './pagers/tutorial-detail/tutorial-detail.component';
+
+import {TutService} from './services/tut.service'
 
 @NgModule({
   declarations: [
@@ -25,6 +29,11 @@ import { TutorialDetailComponent } from './pagers/tutorial-detail/tutorial-detai
     FormsModule,
     HttpModule,
      RouterModule.forRoot([
+       {
+        path: '',
+        redirectTo: '/recommend',
+        pathMatch: 'full'
+      },
       {
         path: 'recommend',
         component: RecommendComponent
@@ -32,10 +41,14 @@ import { TutorialDetailComponent } from './pagers/tutorial-detail/tutorial-detai
       {
         path: 'popular',
         component: PopularComponent
+      },
+      {
+        path: 'tutorial/:id',
+        component: TutorialDetailComponent
       }
     ])
   ],
-  providers: [],
+  providers: [TutService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Tut} from '../../models/tut';
+import { TutService } from '../../services/tut.service';
+
 @Component({
   selector: 'app-popular',
   templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.css']
+  providers: [TutService]
 })
 export class PopularComponent implements OnInit {
+  tuts:Tut[];
+  constructor(private tutService: TutService) { }
 
-  constructor() { }
+  getTuts():void{
+    this.tutService.getTuts().then(tuts => this.tuts = tuts);
+  }
 
   ngOnInit() {
+    this.getTuts();
   }
 
 }
