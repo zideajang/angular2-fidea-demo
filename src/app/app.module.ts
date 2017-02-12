@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
-
+import { AppRoutingModule } from './app-routing/app-routing.module'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,25 +28,8 @@ import {TutService} from './services/tut.service'
     BrowserModule,
     FormsModule,
     HttpModule,
-     RouterModule.forRoot([
-       {
-        path: '',
-        redirectTo: '/recommend',
-        pathMatch: 'full'
-      },
-      {
-        path: 'recommend',
-        component: RecommendComponent
-      },
-      {
-        path: 'popular',
-        component: PopularComponent
-      },
-      {
-        path: 'tutorial/:id',
-        component: TutorialDetailComponent
-      }
-    ])
+    AppRoutingModule
+     
   ],
   providers: [TutService],
   bootstrap: [AppComponent]
