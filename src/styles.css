@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.media img{
+    width: 64px;
+    padding: 0.5rem 1rem;
+}
+.media{
+    margin-bottom: 12px;
+    box-shadow: 0px 0px 2px darkgray;
+}
+
+.list-unstyled{
+    margin-top:128px;
+}

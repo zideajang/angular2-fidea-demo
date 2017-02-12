@@ -1,3 +1,9 @@
-<p>
-  recommend works!
-</p>
+<ul class="list-unstyled">
+    <div class="media" *ngFor="let tutorial of tutorials"  (click)="onSelect(tutorial)">
+        <img class="d-flex mr-3" src="{{tutorial.imagePath}}" alt="">
+        <div class="media-body">
+            <h5 class="mt-0 mb-1">{{tutorial.title}}</h5>
+            {{tutorial.summary}}
+        </div>
+    </div>
+</ul>
