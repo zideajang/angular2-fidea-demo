@@ -4,6 +4,8 @@ import { Repo } from '../../models/repo';
 import { RepoService } from '../../services/repo.service';
 import { RepoFilterPipe } from '../../pipes/repo-filter.pipe';
 
+import { initObservable } from '../../services/init-observable'
+
 @Component({
   selector: 'app-repo-list',
   templateUrl: './repo-list.component.html',
@@ -12,7 +14,9 @@ import { RepoFilterPipe } from '../../pipes/repo-filter.pipe';
 })
 export class RepoListComponent implements OnInit {
   repos:Repo[]
-  constructor(private repoService: RepoService) { }
+  constructor(private repoService: RepoService) {
+    initObservable();
+   }
 
   getRepos():void{
     this.repoService.getRepos().then(repos => this.repos =repos);
