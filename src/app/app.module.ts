@@ -19,7 +19,8 @@ import { RepoListComponent } from './pagers/repo-list/repo-list.component';
 import { RepoComponent } from './pagers/repo-list/repo.component';
 import { RepoFilterPipe } from './pipes/repo-filter.pipe';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
-import { PadComponent } from './pagers/pad/pad.component'
+import { PadComponent } from './pagers/pad/pad.component';
+import { SpriteDirective } from './directives/sprite.directive'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PadComponent } from './pagers/pad/pad.component'
     RepoComponent,
     RepoFilterPipe,
     UserDetailComponent,
-    PadComponent
+    PadComponent,
+    SpriteDirective
   ],
   imports: [
     BrowserModule,

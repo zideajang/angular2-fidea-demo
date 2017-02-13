@@ -7,16 +7,18 @@ export function combineObservable(){
 
     click$.subscribe(
         (event:MouseEvent)=>{
-            // const cirleDiv = document.createElement('span');
-            
-            // console.log((event.clientY).toFixed(1))
-            // cirleDiv.style.position = 'absolute';
-            // cirleDiv.style.width = '2rem';
-            // cirleDiv.style.height = '2rem';
-            // cirleDiv.style.background = 'orangered';
-            // // cirleDiv.style.margin = (event.clientY).toFixed(1);
-            // // cirleDiv.style.marginLeft = (event.clientX).toFixed(1);
-            // document.body.appendChild(cirleDiv);
+            const cirleDiv = document.createElement('span');
+            const radius = Math.floor((Math.random()*30)+32);
+            console.log((event.clientY).toFixed(1))
+            cirleDiv.style.position = 'absolute';
+            cirleDiv.style.width = radius + 'px';
+            cirleDiv.style.height = radius + 'px';
+            cirleDiv.style.borderRadius = "50%";
+            cirleDiv.style.opacity = "0.85";
+            cirleDiv.style.background = "#"+((1<<24)*Math.random()|0).toString(16);
+            cirleDiv.style.top = (event.clientY - (radius/2)).toFixed(1)  + "px";
+            cirleDiv.style.left = (event.clientX - (radius/2)).toFixed(1) + "px";
+            document.body.appendChild(cirleDiv);
         }
     )
 
