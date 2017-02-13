@@ -8,6 +8,10 @@
     box-shadow: 0px 0px 2px darkgray;
 }
 
-.list-unstyled{
-    margin-top:128px;
+
+.sp-container{
+    margin: 0 8px;
+}
+.wrapper{
+    margin-top:96px;
 }

@@ -5,6 +5,7 @@ import { RecommendComponent } from '../pagers/recommend/recommend.component';
 import { PopularComponent } from '../pagers/popular/popular.component';
 import { RepoListComponent } from '../pagers/repo-list/repo-list.component';
 import { MediaComponent } from '../components/media/media.component';
+import { UserDetailComponent } from '../components/user-detail/user-detail.component'
 
 import { TutorialDetailComponent } from '../pagers/tutorial-detail/tutorial-detail.component';
 
@@ -25,6 +26,10 @@ const routes:Routes = [
       {
         path: 'repos',
         component: RepoListComponent
+      },
+      {
+        path: 'user',
+        component: UserDetailComponent
       },
       {
         path: 'tutorial/:id',

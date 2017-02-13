@@ -1,0 +1,12 @@
+<nav class="navbar navbar-inverse bg-primary">
+  <a class="navbar-brand" href="#">用户信息(FormControl)</a>
+</nav>
+<form class="sp-container" [formGroup]="userForm" novalidate>
+
+  <div class="form-group">
+    <label for="username">用户</label>
+    <input class="form-control" formControlName="name"/>
+    <p class="form-text text-muted">表单值: {{ userForm.value | json }}</p>
+    <p class="form-text text-muted">表单状态: {{ userForm.status | json }}</p>
+  </div>
+</form>

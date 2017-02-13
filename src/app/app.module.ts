@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing/app-routing.module'
 
@@ -15,7 +16,9 @@ import { TutorialDetailComponent } from './pagers/tutorial-detail/tutorial-detai
 
 import {TutService} from './services/tut.service';
 import { RepoListComponent } from './pagers/repo-list/repo-list.component';
-import { RepoComponent } from './pagers/repo-list/repo.component'
+import { RepoComponent } from './pagers/repo-list/repo.component';
+import { RepoFilterPipe } from './pipes/repo-filter.pipe';
+import { UserDetailComponent } from './components/user-detail/user-detail.component'
 
 @NgModule({
   declarations: [
@@ -26,14 +29,16 @@ import { RepoComponent } from './pagers/repo-list/repo.component'
     MediaComponent,
     TutorialDetailComponent,
     RepoListComponent,
-    RepoComponent
+    RepoComponent,
+    RepoFilterPipe,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
-     
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [TutService],
   bootstrap: [AppComponent]

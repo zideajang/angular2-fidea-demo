@@ -10,6 +10,7 @@ import { TutService } from '../../services/tut.service';
 })
 export class PopularComponent implements OnInit {
   tuts:Tut[];
+  searchName:string;
   constructor(private tutService: TutService) { }
 
   getTuts():void{
