@@ -5,6 +5,7 @@ import { RepoService } from '../../services/repo.service';
 import { RepoFilterPipe } from '../../pipes/repo-filter.pipe';
 
 import { initObservable } from '../../services/init-observable'
+import { combineObservable } from '../../services/combine-observable'
 
 @Component({
   selector: 'app-repo-list',
@@ -15,7 +16,11 @@ import { initObservable } from '../../services/init-observable'
 export class RepoListComponent implements OnInit {
   repos:Repo[]
   constructor(private repoService: RepoService) {
-    initObservable();
+
+    //Rxjs 第一个部分内容 介绍 Observable , Subcribe 和 Operator
+    // initObservable();
+    //
+    combineObservable()
    }
 
   getRepos():void{

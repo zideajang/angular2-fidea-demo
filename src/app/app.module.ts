@@ -18,7 +18,8 @@ import {TutService} from './services/tut.service';
 import { RepoListComponent } from './pagers/repo-list/repo-list.component';
 import { RepoComponent } from './pagers/repo-list/repo.component';
 import { RepoFilterPipe } from './pipes/repo-filter.pipe';
-import { UserDetailComponent } from './components/user-detail/user-detail.component'
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { PadComponent } from './pagers/pad/pad.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     RepoListComponent,
     RepoComponent,
     RepoFilterPipe,
-    UserDetailComponent
+    UserDetailComponent,
+    PadComponent
   ],
   imports: [
     BrowserModule,

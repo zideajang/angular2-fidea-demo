@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RecommendComponent } from '../pagers/recommend/recommend.component';
 import { PopularComponent } from '../pagers/popular/popular.component';
 import { RepoListComponent } from '../pagers/repo-list/repo-list.component';
+import { PadComponent } from '../pagers/pad/pad.component';
 import { MediaComponent } from '../components/media/media.component';
 import { UserDetailComponent } from '../components/user-detail/user-detail.component'
 
@@ -19,10 +20,10 @@ const routes:Routes = [
         path: 'recommend',
         component: RecommendComponent
       },
-      // {
-      //   path: 'popular',
-      //   component: PopularComponent
-      // },
+      {
+        path: 'pad',
+        component: PadComponent
+      },
       {
         path: 'repos',
         component: RepoListComponent
