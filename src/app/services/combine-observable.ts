@@ -20,11 +20,15 @@ export function combineObservable(){
         }
     )
 
-    const mouse$ = Observable.fromEvent(document, 'mousemove');
+    const mouse$ = Observable.fromEvent(document, 'mousemove')
+            .filter((move:MouseEvent)=>move.clientY > 400);
 
     mouse$.subscribe(
-        (move:MouseEvent) => console.log(move)
+        // (move:MouseEvent) => console.log(move)
     )
+
+    const combined$ = Observable.combineLatest(mouse$, click$)
+    combined$.subscribe(combined=>console.log("combined:",combined[0])); 
 
     const touch$ = Observable.fromEvent(document,'touch');
     touch$.subscribe(
