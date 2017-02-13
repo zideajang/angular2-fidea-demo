@@ -10,10 +10,13 @@ export function initObservable(){
     // keys$.subscribe();
 
     //----------- lesson two -----------
-
+    //----------- lesson three --------
     // fetch('https://api.github.com/users/zideajang/repos')
     //     .then(res=>res.json())
     //     .then(repo=>console.log(repo));
+
+    
+
     const reposUrl = 'https://api.github.com/users/zideajang/repos'
     const reposPromise = fetch(reposUrl)
                             .then(res=>res.json());
@@ -22,6 +25,15 @@ export function initObservable(){
                             // .map((key,index)=>{
                             //     console.log(key," => ",index);
                             // })
+
+    const firstRepo$ = repos$.map((repos)=>{
+        console.log(repos[0])
+        return repos[0]
+    });
+
+    firstRepo$.subscribe(
+        repo=>console.log("first repo", repo.name)
+    )
 
     repos$.subscribe(
         repos => console.log("new lessons", repos),
