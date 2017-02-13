@@ -3,10 +3,61 @@
 </nav>
 <form class="sp-container" [formGroup]="userForm" novalidate>
 
-  <div class="form-group">
+  <div class="form-group" [ngClass]="{'has-warning':userForm.get('name').untouched}">
     <label for="username">用户</label>
     <input class="form-control" formControlName="name"/>
-    <p class="form-text text-muted">表单值: {{ userForm.value | json }}</p>
-    <p class="form-text text-muted">表单状态: {{ userForm.status | json }}</p>
   </div>
+  <fieldset formGroupName="address" [ngClass]="{'has-warning':userForm.get('name').untouched}">
+  <div class="form-group">
+    <label for="username">邮件地址</label>
+    <input class="form-control" formControlName="email"/>
+  </div>
+  <div class="form-group" [ngClass]="{'has-warning':userForm.get('name').untouched}">
+    <label for="username">微信号</label>
+    <input class="form-control" formControlName="weixin"/>
+  </div>
+
+   <div class="form-group">
+    <label for="city" >城市:
+      <select class="form-control" formControlName="city">
+          <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+      </select>
+    </label>
+  </div>
+
+  </fieldset>
+   <fieldset  class="form-group">
+     <legend>熟悉的语言:</legend>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" formControlName="language" value="javascript">Javascript
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label"><input type="radio" class="form-check-input" formControlName="language" value="java">java</label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label"><input type="radio" class="form-check-input" formControlName="language" value="php">php</label>
+      </div>
+  </fieldset >
+   <div class="form-group-row">
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" formControlName="isWebDeveloper">是否为前端工程师
+      </label>
+    </div>
+   </div>
 </form>
+
+<div class="alert alert-info" role="alert">
+  <strong>表单值: {{ userForm.value | json }}</strong>
+</div>
+<div class="alert alert-info" role="alert">
+  <strong>表单状态: {{ userForm.status | json }}</strong>
+</div>
+<div class="alert alert-success" role="alert">
+  <strong>用户名: {{ userForm.get('name').value}}</strong>
+</div>
+<div class="alert alert-success" role="alert">
+  <strong>邮件地址: {{ userForm.get('address.email').value}}</strong>
+</div>

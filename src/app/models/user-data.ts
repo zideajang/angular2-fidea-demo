@@ -5,6 +5,7 @@ export class User {
 }
 
 export class Address{
+    city = "";
     email = '';
     weixin = ''
 }
@@ -15,10 +16,12 @@ export const users:User[] = [
         name:"matthew",
         addresses:[
             {
+                city:"SH",
                 email: "matthew@163.com",
                 weixin : "123"
             },
             {
+                city:"SY",
                 email: "zidea@163.com",
                 weixin : "456"
             }
@@ -29,13 +32,12 @@ export const users:User[] = [
         name:"tina",
         addresses:[
             {
+                city:"SY",
                 email: "tina@163.com",
                 weixin : "123"
-            },
-            {
-                email: "christinacd@163.com",
-                weixin : "456"
             }
         ]
     }
 ]
+
+export const cities = ['BJ', 'SH', 'SY', 'SZ'];
