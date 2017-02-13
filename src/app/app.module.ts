@@ -13,7 +13,9 @@ import { PopularComponent } from './pagers/popular/popular.component';
 import { MediaComponent } from './components/media/media.component';
 import { TutorialDetailComponent } from './pagers/tutorial-detail/tutorial-detail.component';
 
-import {TutService} from './services/tut.service'
+import {TutService} from './services/tut.service';
+import { RepoListComponent } from './pagers/repo-list/repo-list.component';
+import { RepoComponent } from './pagers/repo-list/repo.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {TutService} from './services/tut.service'
     RecommendComponent,
     PopularComponent,
     MediaComponent,
-    TutorialDetailComponent
+    TutorialDetailComponent,
+    RepoListComponent,
+    RepoComponent
   ],
   imports: [
     BrowserModule,

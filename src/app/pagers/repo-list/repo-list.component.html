@@ -1,0 +1,10 @@
+<ul class="list-group" >
+  
+  <li class="list-group-item justify-content-between" 
+  *ngFor="let repo of repos"
+  (click)="onSelected(repo)">
+    {{repo.name}}
+    <span class="badge badge-default badge-pill">{{repo.forks}}</span>
+  </li>
+  
+</ul>
