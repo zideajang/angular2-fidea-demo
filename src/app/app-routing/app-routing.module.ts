@@ -20,6 +20,7 @@ const routes:Routes = [
         path: 'recommend',
         component: RecommendComponent
       },
+      
       {
         path: 'pad',
         component: PadComponent

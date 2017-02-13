@@ -3,7 +3,9 @@ declare function fetch(url:string);
 
 export function combineObservable(){
 
-    const click$ = Observable.fromEvent(document,'click');
+    const click$ = Observable.fromEvent(document,'click')
+                        .filter((event:MouseEvent)=>event.clientY > 200)
+                        .throttleTime(300);
 
     click$.subscribe(
         (event:MouseEvent)=>{
