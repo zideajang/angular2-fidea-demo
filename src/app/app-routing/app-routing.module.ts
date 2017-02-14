@@ -9,6 +9,7 @@ import { MediaComponent } from '../components/media/media.component';
 import { UserDetailComponent } from '../components/user-detail/user-detail.component'
 
 import { TutorialDetailComponent } from '../pagers/tutorial-detail/tutorial-detail.component';
+import { TutListComponent } from '../pagers/tut-list/tut-list.component';
 
 const routes:Routes = [
        {
@@ -28,6 +29,10 @@ const routes:Routes = [
       {
         path: 'repos',
         component: RepoListComponent
+      },
+      {
+        path: 'tuts',
+        component: TutListComponent
       },
       {
         path: 'user',
